@@ -14,9 +14,9 @@ class SemanticVersionSpec: QuickSpec {
     override func spec() {
         describe("initialize") {
             context("initializerにmajor,minor,patchの引数が渡されたとき") {
-                let major = 1
-                let minor = 2
-                let patch = 3
+                let major: UInt = 1
+                let minor: UInt = 2
+                let patch: UInt = 3
                 let target = SemanticVersion(major: major, minor: minor, patch: patch)
                 it("SemanticVErsionインスタンスが生成される") {
                     expect(type(of: target)).notTo(beNil())
@@ -33,9 +33,9 @@ class SemanticVersionSpec: QuickSpec {
         
         describe("等価判定") {
             context("同じバージョンを持つオブジェクトを比較したとき") {
-                let major = 1
-                let minor = 2
-                let patch = 3
+                let major: UInt = 1
+                let minor: UInt = 2
+                let patch: UInt = 3
                 let left = SemanticVersion(major: major, minor: minor, patch: patch)
                 let right = SemanticVersion(major: major, minor: minor, patch: patch)
                 
@@ -46,10 +46,10 @@ class SemanticVersionSpec: QuickSpec {
             }
             
             context("異なるバージョンを持つオブジェクトを比較したとき") {
-                let major = 1
-                let minor = 2
-                let leftPatch = 3
-                let rightPatch = 5
+                let major: UInt = 1
+                let minor: UInt = 2
+                let leftPatch: UInt = 3
+                let rightPatch: UInt = 5
                 let left = SemanticVersion(major: major, minor: minor, patch: leftPatch)
                 let right = SemanticVersion(major: major, minor: minor, patch: rightPatch)
                 
@@ -62,9 +62,9 @@ class SemanticVersionSpec: QuickSpec {
 }
 
 struct SemanticVersion: Equatable{
-    var major: Int
-    var minor: Int
-    var patch: Int
+    var major: UInt
+    var minor: UInt
+    var patch: UInt
     
     func toString() -> String {
         return "\(major).\(minor).\(patch)"
@@ -72,5 +72,5 @@ struct SemanticVersion: Equatable{
 }
 
 func ==(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
-    return lhs.major == rhs.major && lhs.minor == rhs.minor && lhs.patch == rghs.patch
+    return lhs.major == rhs.major && lhs.minor == rhs.minor && lhs.patch == rhs.patch
 }
