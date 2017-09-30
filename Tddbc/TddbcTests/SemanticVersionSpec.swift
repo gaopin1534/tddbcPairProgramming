@@ -14,10 +14,7 @@ class SemanticVersionSpec: QuickSpec {
     override func spec() {
         describe("initialize") {
             context("initializerにmajor,minor,patchの引数が渡されたとき") {
-                let major = 1
-                let minor = 2
-                let patch = 3
-                let target = SemanticVersion(major: major, minor: minor, patch: patch)
+                let target = SemanticVersion(major: 1, minor: 2, patch: 3)
                 it("SemanticVErsionインスタンスが生成される") {
                     expect(type(of: target)).notTo(beNil())
                 }
@@ -38,7 +35,6 @@ class SemanticVersionSpec: QuickSpec {
                 let patch = 3
                 let left = SemanticVersion(major: major, minor: minor, patch: patch)
                 let right = SemanticVersion(major: major, minor: minor, patch: patch)
-                
                 
                 it("trueを返す") {
                     expect(left).to(equal(right))
@@ -61,7 +57,7 @@ class SemanticVersionSpec: QuickSpec {
     }
 }
 
-struct SemanticVersion: Equatable{
+struct SemanticVersion {
     var major: Int
     var minor: Int
     var patch: Int
@@ -71,6 +67,8 @@ struct SemanticVersion: Equatable{
     }
 }
 
-func ==(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
-    return lhs.major == rhs.major && lhs.minor == rhs.minor && lhs.patch == rhs.patch
+extension SemanticVersion: Equatable {
+    static func ==(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+        return lhs.major == rhs.major && lhs.minor == rhs.minor && lhs.patch == rhs.patch
+    }
 }
