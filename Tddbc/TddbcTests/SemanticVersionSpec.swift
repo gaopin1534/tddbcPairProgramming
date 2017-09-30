@@ -23,6 +23,13 @@ class SemanticVersionSpec: QuickSpec {
                 }
             }
         }
+        
+        describe("Versionの文字列を取得するメソッド（仮）") {
+            let actual = SemanticVersion(major: 1, minor: 2, patch: 3)
+            it("SemanticVersionの文字列表現を返す") {
+                expect(actual.toString()).to(equal("1.2.3"))
+            }
+        }
     }
 }
 
@@ -30,4 +37,8 @@ struct SemanticVersion {
     var major: Int
     var minor: Int
     var patch: Int
+    
+    func toString() -> String {
+        return "\(major).\(minor).\(patch)"
+    }
 }
