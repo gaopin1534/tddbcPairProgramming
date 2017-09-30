@@ -54,6 +54,13 @@ class SemanticVersionSpec: QuickSpec {
                 }
             }
         }
+        
+        describe("patchのバージョンアップ") {
+            let target = SemanticVersion(major: 1, minor: 2, patch: 3)
+            it("インクリメントされたバージョンを返す") {
+                expect(target.patchUpdated()).to(equal(SemanticVersion(major: 1, minor: 2, patch: 4)))
+            }
+        }
     }
 }
 
@@ -64,6 +71,11 @@ struct SemanticVersion {
     
     func toString() -> String {
         return "\(major).\(minor).\(patch)"
+    }
+    
+    func patchUpdated() -> SemanticVersion {
+        let updated = patch + 1
+        return SemanticVersion(major: major, minor: minor, patch: updated)
     }
 }
 
