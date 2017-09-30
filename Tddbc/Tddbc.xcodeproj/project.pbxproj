@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360523F01F7F58A8008D83BD /* SemanticVersionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360523EF1F7F58A8008D83BD /* SemanticVersionSpec.swift */; };
 		6BD9904071E8DD26F6BA20C2 /* Pods_TddbcTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3F335FA9B570EE873A8696 /* Pods_TddbcTests.framework */; };
 		992F2E637DE74CE7B31D88C9 /* Pods_Tddbc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BFD35FEF2D8F17C5E3EAA18 /* Pods_Tddbc.framework */; };
 		B2A13F671F7F546400D64CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A13F661F7F546400D64CF7 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		0E5D50D1A7D04A932D358FBF /* Pods-Tddbc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tddbc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tddbc/Pods-Tddbc.debug.xcconfig"; sourceTree = "<group>"; };
 		1BFD35FEF2D8F17C5E3EAA18 /* Pods_Tddbc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tddbc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3F335FA9B570EE873A8696 /* Pods_TddbcTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TddbcTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		360523EF1F7F58A8008D83BD /* SemanticVersionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticVersionSpec.swift; sourceTree = "<group>"; };
 		46BC6CD7A36B40CA79333A3B /* Pods-Tddbc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tddbc.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tddbc/Pods-Tddbc.release.xcconfig"; sourceTree = "<group>"; };
 		710CB38A82C7BD5C0E81F7E4 /* Pods-TddbcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TddbcTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TddbcTests/Pods-TddbcTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2A13F631F7F546400D64CF7 /* Tddbc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tddbc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				B2A13F7B1F7F546500D64CF7 /* TddbcTests.swift */,
+				360523EF1F7F58A8008D83BD /* SemanticVersionSpec.swift */,
 				B2A13F7D1F7F546500D64CF7 /* Info.plist */,
 			);
 			path = TddbcTests;
@@ -254,13 +257,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tddbc-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		783CFD62A55580AC4F4A8A8C /* [CP] Check Pods Manifest.lock */ = {
@@ -269,13 +275,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TddbcTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9BD51DF21CC1D59C34455D47 /* [CP] Copy Pods Resources */ = {
@@ -299,9 +308,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TddbcTests/Pods-TddbcTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -340,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2A13F7C1F7F546500D64CF7 /* TddbcTests.swift in Sources */,
+				360523F01F7F58A8008D83BD /* SemanticVersionSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
